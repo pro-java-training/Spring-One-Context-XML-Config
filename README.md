@@ -1,2 +1,1 @@
-<<<<<<< HEAD
 # Start-Spring-Template
