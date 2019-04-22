@@ -6,6 +6,27 @@
 
     <display-name>Spring Application</display-name>
 
+    <!-- 处理静态资源 -->
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>/resource/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- 使用派发器处理请求 -->
+    <servlet>
+        <servlet-name>springDispatcher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name> <!-- 配置文件地址 -->
+            <param-value>/WEB-INF/servletContext.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>springDispatcher</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
     <!-- 通用配置 -->
     <jsp-config>
         <jsp-property-group>
